@@ -1,13 +1,13 @@
 module.exports = {
-  roots: ["<rootDir>/src"],
-  collectCoverageFrom: ["<rootDir>/src/**/*.{ts,tsx}", "!**/*.d.ts"],
-  coverageDirectory: "coverage",
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx}', '!**/*.d.ts'],
+  coverageDirectory: 'coverage',
   moduleNameMapper: {
-    "@/(.*)": "<rootDir>/src/$1",
+    '@/(.*)': '<rootDir>/src/$1',
+    '\\.scss$': 'identity-obj-proxy'
   },
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    ".+\\.(ts|tsx)$": "ts-jest",
-    "\\.scss$": "identity-obj-proxy",
-  },
+    '.+\\.(ts|tsx)$': 'ts-jest'
+  }
 };
