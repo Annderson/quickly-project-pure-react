@@ -1,0 +1,106 @@
+@import '../../styles/dimensions.scss';
+@import '../../styles/colors.scss';
+
+.home {
+    overflow: auto;
+
+    @keyframes squares {
+        25% {
+            transform: rotate(80deg);
+        }
+        50% {
+            transform: rotate(160deg);
+            transform: scale(1.3);
+        }
+        75% {
+            transform: rotate(240deg);
+        }
+        100% {
+            transform: rotate(320deg);
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes squares3d {
+        25% {
+            transform: rotate3d(1,1,1,80deg);
+        }
+        50% {
+            transform: rotate3d(1,1,1,240deg);
+            transform: scale(1.3);
+        }
+        75% {
+            transform: rotate3d(1,1,1,160deg);
+        }
+        100% {
+            transform: rotate3d(1,1,1,320deg);
+            transform: scale(1.2);
+        }
+    }
+
+    .containerLogo {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: $sizeVh100;
+        justify-content: space-evenly;
+        margin-top: -$size40;
+
+        .title {
+            font-size: $size28;
+            font-family: 'Inconsolata', monospace;
+            font-weight: 400;
+            line-height: $size40;
+            max-width: $size200;
+            text-align: center;
+        }
+
+        .squareContainer {
+            align-items: center;
+            display: flex;
+            height: $size200;
+            justify-content: center;
+            position: relative;
+            width: $size200;
+        }
+
+        .square,
+        .square3d80,
+        .square3d40,
+        .square0,
+        .square160 {
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            background-color: $transparentWhiteAa;
+            border: $size5 solid $primary;
+            box-shadow: $size0 $size0 $size12 $size10 $transparentBlack55;
+            height: $size120;
+            position: absolute;
+            width: $size120;
+        }
+
+        .square3d40 {
+            transform: rotate3d(1,1,1,80deg);
+            animation-delay: 1.5s;
+            animation-name: squares3d;
+        }
+
+        .square3d80 {
+            transform: rotate3d(1,1,1,160deg);
+            animation-delay: 3s;
+            animation-name: squares3d;
+        }
+
+        .square160 {
+            transform: rotate(160deg);
+            animation-delay: 4.5s;
+            animation-name: squares3d;
+        }
+
+        .square0 {
+            animation-name: squares;
+            transform: rotate(0deg);
+        }
+
+    }
+}
