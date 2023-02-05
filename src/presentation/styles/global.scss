@@ -1,0 +1,15 @@
+@import "./colors.scss";
+@import "./dimensions.scss";
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: $size14;
+    padding: $size0;
+    margin: $size0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $background;
+    transition: all 1s;
+}
