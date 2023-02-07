@@ -17,9 +17,12 @@
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/indent": "off",
+    "indent": ["error", 2],
+    "multiline-ternary": ["error", "never"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "semi": ["error", "always"]
   }
 }
