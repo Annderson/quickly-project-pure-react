@@ -1,0 +1,154 @@
+@import '../../styles/dimensions.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.login {
+    .dFlex {
+        display: flex;
+    }
+
+    .centered {
+        @extend .dFlex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .linkBase {
+        color: $white;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            color: $blue5c;
+        }
+    }
+
+    background-image: url(../../../assets/img/img.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: $sizeVh100;
+    overflow: hidden;
+    position: relative;
+    width: $sizeVw100;
+
+    .loginContainer {
+        @extend .centered;
+        background-color: rgba($color: $greenDark, $alpha: 0.7);
+        height: $sizeFull;
+        position: absolute;
+        width: $sizeFull;
+        z-index: 2;
+
+        .form {
+            @extend .dFlex;
+            background-color: rgba($color: $primary, $alpha: 0.6);
+            flex-direction: column;
+            height: $size600;
+            max-width: $size500;
+            padding: $size30;
+            text-decoration: none;
+            width: $size500;
+
+            .linkBack {
+                @extend .dFlex;
+                @extend .linkBase;
+                align-items: center;
+                width: min-content;
+
+                .iconBack {
+                    font-size: $size22;
+                    margin-right: $size8;
+                }
+
+                .textBack {
+                    font-size: $size20;
+                }
+            }
+
+            .loginWrapper {
+                @extend .centered;
+                flex-direction: column;
+                height: $sizeFull;
+
+                .titleWrapper {
+                    @extend .dFlex;
+                    align-items: center;
+                    color: $white;
+
+                    .iconTitle {
+                        font-size: $size26;
+                        margin-right: $size15;
+                    }
+
+                    .title {
+                        @extend .fontIncons28;
+                        font-weight: bold;
+                    }
+                }
+
+                .inputContainer {
+                    @extend .dFlex;
+                    flex-direction: column;
+                    margin-bottom: $size50;
+                    margin-top: $size50;
+                    width: $sizeFull;
+
+                    .eye {
+                        bottom: $size5;
+                        color: $white;
+                        cursor: pointer;
+                        font-size: $size22;
+                        position: absolute;
+                        right: $size10;
+                    }
+
+                    .forgotPassword {
+                        @extend .linkBase;
+                        font-size: $size12;
+                        text-align: end;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .submit {
+                    @extend .fontIncons20;
+                    background-color: $transparent;
+                    border: $size3 solid $white;
+                    color: $white;
+                    cursor: pointer;
+                    padding: $size12;
+                    width: $sizeFull;
+
+                    &:hover {
+                        border-color: $blue5c;
+                        color: $blue5c;
+                    }
+                }
+
+                .linkRegister {
+                    @extend .linkBase;
+                    @extend .fontIncons20;
+                    color: $white;
+                    font-weight: bolder;
+                    margin-top: $size20;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $size500) {
+        .loginContainer {
+            .form {
+                height: $sizeFull;
+            }
+        }
+    }
+}
