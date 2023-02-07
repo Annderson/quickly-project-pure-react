@@ -1,0 +1,69 @@
+@import '../../../../styles/dimensions.scss';
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/fonts.scss';
+
+.inputWrapper {
+    align-items: center;
+    color: $white;
+    display: flex;
+    margin: $size15 $size0;
+    position: relative;
+
+    .iconLeftBase {
+        bottom: $size8; 
+        font-size: $size15;
+        position: absolute;
+        left: $size0;
+    }
+
+    .iconLeft {
+        @extend .iconLeftBase;
+    }
+
+    .iconLeftError {
+        @extend .iconLeftBase;
+        color: $invalid;
+    }
+
+    .inputBase {
+        @extend .fontIncons16;
+        background-color: $transparent;
+        border: none;
+        color: $white;
+        flex-grow: 1;
+        font-weight: bold;
+        padding-right: $size30;
+        padding-left: $size24;
+        padding-bottom: $size3;
+
+        &::placeholder {
+            color: $white;
+        }
+    }
+
+    .input {
+        @extend .fontIncons16;
+        @extend .inputBase;
+        border-bottom: $size3 solid $white;
+
+        &:hover {
+            border-bottom: $size3 solid $blue5c;
+        }
+
+        &:focus {
+            border-bottom: $size3 solid $blue5c;
+            outline: 0;
+        }
+
+    }
+
+    .inputError {
+        @extend .fontIncons16;
+        @extend .inputBase;
+        border-bottom: $size3 solid $invalid;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
